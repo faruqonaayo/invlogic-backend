@@ -9,7 +9,10 @@ import { signupValidator } from "../utils/validatorArrays.js";
 const router = express.Router();
 
 // router middleware
-// router to create new user
+// route to create new user
 router.put("/signup", signupValidator, authControllers.createNewUser);
+
+// route to log users in
+router.post("/login", authControllers.postLogin)
 
 export default router;
