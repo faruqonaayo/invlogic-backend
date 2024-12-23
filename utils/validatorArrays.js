@@ -4,19 +4,22 @@ import { body } from "express-validator";
 //validators
 export const signupValidator = [
   body("firstName")
+    .trim()
     .isLength({ min: 2 })
     .withMessage("First name should be a minimum of 2 characters")
     .isAlpha()
     .withMessage("First name should be alphabets only"),
   body("lastName")
+    .trim()
     .isLength({ min: 2 })
     .withMessage("Last name should be a minimum of 2 characters")
     .isAlpha()
     .withMessage("Last Name should be alphabets only"),
   body("username")
+    .trim()
     .isLength({ min: 5 })
     .withMessage("Username should be a minimum of 5 characters"),
-  body("email", "Enter a valid email").isEmail(),
+  body("email", "Enter a valid email").trim().toLowerCase().isEmail(),
   body("password")
     .isStrongPassword({
       minLength: 7,

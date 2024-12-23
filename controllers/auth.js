@@ -68,7 +68,9 @@ export async function postLogin(req, res, next) {
     const usernameOrEmailInput = req.body.usernameOrEmail;
     const passwordInput = req.body.password;
 
-    let emailExist = await User.findOne({ email: usernameOrEmailInput });
+    let emailExist = await User.findOne({
+      email: usernameOrEmailInput.toLowerCase(),
+    });
     let usernameExist = await User.findOne({ username: usernameOrEmailInput });
 
     //   checking if either username or emai exists

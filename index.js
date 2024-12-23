@@ -3,6 +3,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import cors from "cors";
 
 // custom modules
 import serverResponse from "./utils/serverResponse.js";
@@ -23,6 +24,7 @@ const DB_NAME = process.env.DB_NAME;
 mongoose.connect(DB_URI, { dbName: DB_NAME });
 
 // using 3rd party middleware
+app.use(cors());
 app.use(bodyParser.json());
 
 // API home route middleware
