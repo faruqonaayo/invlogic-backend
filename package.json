@@ -1,0 +1,21 @@
+{
+  "name": "invlogic-backend",
+  "version": "1.0.0",
+  "description": "This is the backend service of Invlogic a project management application",
+  "license": "ISC",
+  "author": "Faruq Ayomide",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.0",
+    "mongoose": "^8.9.2"
+  }
+}
