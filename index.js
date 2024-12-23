@@ -5,7 +5,8 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 
 // custom modules
-import serverResponse from "./util/serverResponse.js";
+import serverResponse from "./utils/serverResponse.js";
+import authRoutes from "./routes/auth.js";
 
 // express app
 const app = express();
@@ -32,6 +33,7 @@ app.get("/", (req, res, next) => {
 });
 
 // other routes middleware
+app.use("/api/auth", authRoutes);
 
 // route not found middleware
 app.use((req, res, next) => {
